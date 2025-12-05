@@ -34,9 +34,15 @@ public class Hooks {
                     Files.createDirectories(screenshotDir);
                     File sourceFile = ((TakesScreenshot) context.driver).getScreenshotAs(OutputType.FILE);
                     Files.copy(sourceFile.toPath(),DestinationPath);
-                } catch (IOException e) {System.out.println("Error while taking screenshot: "+e.getMessage());
-                } catch (Exception e) {System.out.println("Error while getting the driver: "+e.getMessage());
-            }
+                }
+                catch (IOException e)
+                    {
+                        System.out.println("Error while taking screenshot: "+e.getMessage());
+                    }
+                catch (Exception e)
+                    {
+                        System.out.println("Error while getting the driver: "+e.getMessage());
+                    }
 
             final byte[] screenshot = ((TakesScreenshot) context.driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName() + " - failed");

@@ -22,9 +22,11 @@ public class TestContext {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
+
                     Map<String, Object> prefs = new HashMap<>();
-                    prefs.put("profile.password_manager_leak_detection", false);
-                    options.setExperimentalOption("prefs", prefs);
+                        prefs.put("profile.password_manager_leak_detection", false);
+                        options.setExperimentalOption("prefs", prefs);
+
                     this.driver = new ChromeDriver(options);
                 break;
             case "firefox":
