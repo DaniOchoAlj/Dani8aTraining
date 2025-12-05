@@ -37,7 +37,7 @@ public class Hooks {
                 }
                 catch (IOException e)
                     {
-                        System.out.println("Error while taking screenshot: "+e.getMessage());
+                        System.out.println("Error while taking screenshot: "+e.getMessage()+' testeoahuevo');
                     }
                 catch (Exception e)
                     {
