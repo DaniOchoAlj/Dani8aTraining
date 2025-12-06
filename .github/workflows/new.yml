@@ -3,16 +3,16 @@ name: run unit test of feature branches
 on:
   push:
     branches:
-      'NewBranch/*'
+      'NewBranch'
 
 
-    jobs:
-      run-unit-tests:
-        runs-on: windows
+jobs:
+  run-unit-tests:
+    runs-on: windows
 
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v6.0.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.1
 
-          - name: run
-            run: mvn test
+      - name: run
+        run: mvn test
